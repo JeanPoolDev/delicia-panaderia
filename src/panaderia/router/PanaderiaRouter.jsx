@@ -12,6 +12,8 @@ export function PanaderiaRouter() {
     <>
       <Header />
 
+
+
       <Routes>
 
         <Route path="/" element={<HomePage />} />

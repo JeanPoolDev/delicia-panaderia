@@ -31,3 +31,11 @@ export function Exit() {
     </svg>
   );
 };
+
+export function Menu() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+      <path fill="#000" fill-rule="evenodd" d="M4 9.75h16c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H4c-.41 0-.75.34-.75.75s.34.75.75.75m0 6h10c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H4c-.41 0-.75.34-.75.75s.34.75.75.75" color="#000" />
+    </svg>
+  );
+};

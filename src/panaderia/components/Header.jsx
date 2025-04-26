@@ -4,9 +4,17 @@ import { Cart, Exit } from "../../icons";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../store/auth/thunk";
 
+
+gsap.registerPlugin(CSSRulePlugin);
+
+import { gsap } from "gsap";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+
+
 export function Header() {
 
   const dispatch = useDispatch();
+
   const { photoURL } = useSelector(state => state.auth);
   const { cart } = useContext(PanContext);
 
@@ -16,9 +24,9 @@ export function Header() {
     dispatch(startLogout())
   }
 
+
   return (
-    <header className="fixed top-3 left-1/2 transform -translate-x-1/2 bg-white  
-            w-[350px] sm:w-[700px] xl:w-[1300px] h-[100px] rounded-full border z-[100]">
+    <header className="fixed top-0 w-full bg-white h-[100px] z-[100]">
       <div className="flex items-center h-full px-10 justify-between">
         <a href="/" className="text-xl font-bold hover:scale-125 transition-all">
           Delicia Pan
@@ -44,14 +52,16 @@ export function Header() {
             className="cursor-pointer">
             <Exit />
           </button>
-          <img
+          {/* <img
             src={photoURL}
             alt="user"
             className="w-10 h-10 object-cover rounded-full border z-10"
-          />
+          /> */}
 
         </div>
       </div>
     </header>
   );
 };
+
+

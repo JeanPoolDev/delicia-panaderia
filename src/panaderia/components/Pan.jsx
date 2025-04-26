@@ -5,7 +5,7 @@ export function Pan({ producto, addToCart }) {
   return (
     <button
       onClick={() => addToCart(producto)}
-      className="h-[600px] bg-[#f7f6f2] rounded cursor-pointer">
+      className="h-[600px] bg-[#f7f6f2] rounded cursor-pointer hover:bg-[#1212122b] transition-all">
 
       <div className="h-5/6">
         <img
