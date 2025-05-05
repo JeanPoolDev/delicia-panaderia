@@ -1,3 +1,4 @@
+
 import { useContext } from "react";
 import { PanContext } from "../context";
 import { Cart, Exit } from "../../icons";
@@ -9,13 +10,14 @@ gsap.registerPlugin(CSSRulePlugin);
 
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { DropDown } from "./DropDown";
 
 
 export function Header() {
 
   const dispatch = useDispatch();
 
-  const { photoURL } = useSelector(state => state.auth);
+  const { photoURL, status, displayName } = useSelector(state => state.auth);
   const { cart } = useContext(PanContext);
 
   const lengthCart = cart.length;
@@ -31,14 +33,14 @@ export function Header() {
         <a href="/" className="text-xl font-bold hover:scale-125 transition-all">
           Delicia Pan
         </a>
-        <nav className="hidden xl:flex gap-6 text-[#9e7d5d] font-bold text-lg">
+        <nav className="hidden lg:flex gap-6 text-[#9e7d5d] font-bold text-lg">
           <a href="/">Inicio</a>
           <a href="/#about">Sobre nosotros</a>
           <a href="/#panes">Producto</a>
           <a href="/#place">Lugares</a>
           <a href="/shop">Tienda</a>
         </nav>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <a
             href="/cart"
             className="px-4 py-3 sm:px-5 sm:py-4 rounded-lg bg-[#9e7d5d] text-white flex">
@@ -47,21 +49,19 @@ export function Header() {
               {Number(lengthCart)}
             </p>
           </a>
-          <button
-            onClick={onLogout}
-            className="cursor-pointer">
-            <Exit />
-          </button>
-          {/* <img
-            src={photoURL}
-            alt="user"
-            className="w-10 h-10 object-cover rounded-full border z-10"
-          /> */}
 
+          {
+            (status === 'authenticated')
+              ? <DropDown onLogout={onLogout} photoURL={photoURL} displayName={displayName} />
+              : <a
+                href="/auth/login"
+                className="bg-black text-white px-6 py-4 rounded-lg cursor-pointer font-semibold
+              hover:bg-white hover:text-black transition-all hover:outline">
+                Iniciar Sesión
+              </a>
+          }
         </div>
       </div>
     </header>
   );
 };
-
-

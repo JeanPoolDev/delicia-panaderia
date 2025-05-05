@@ -1,6 +1,8 @@
+
 import { Navigate, Route, Routes } from "react-router";
 import { LoginPage } from "../pages/LoginPage";
 import { useSelector } from "react-redux";
+import { Loading } from "../../panaderia/components/Loading";
 
 export function AuthRouter() {
 
@@ -9,6 +11,11 @@ export function AuthRouter() {
   if (status === 'authenticated') {
     return <Navigate to={'/'} />
   }
+
+  if (status === 'checking') {
+    return <Loading />
+  }
+
 
   return (
     <Routes>

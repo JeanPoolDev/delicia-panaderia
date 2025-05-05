@@ -13,15 +13,25 @@ export function FormLogin() {
 
   return (
     <LayoutForm title='Ingresar a Panaderia Delicia'>
-      <form className="space-y-6" >
 
-        <button
-          onClick={loginGoogle}
-          className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Google
-        </button>
+      <h2 className="text-2xl font-semibold mb-50">
+        🥖Delicia Pan
+      </h2>
 
-      </form>
+      <h1 className="text-8xl  px-[2em] mb-20">
+        Inicia Sesión
+      </h1>
+
+      <button
+        onClick={loginGoogle}
+        className="bg-[#9e7d5d] text-white font-semibold px-40 py-4 rounded-full mb-20 cursor-pointer">
+        Google
+      </button>
+
+      <p className="px-[14em] text-lg">
+        Inicia sesión para <span className="text-[#9e7d5d] font-semibold">comprar</span > y probar los <span className="text-[#9e7d5d] font-semibold">mejores panes</span>
+      </p>
+
     </LayoutForm>
   );
 };

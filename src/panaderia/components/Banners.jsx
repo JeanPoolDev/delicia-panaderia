@@ -1,6 +1,6 @@
 export function Banners() {
   return (
-    <div className="h-screen p-4 sm:p-10">
+    <div className="h-screen p-4 sm:p-10 mt-[100px]">
       <div className="w-full h-full border rounded-2xl 
                 bg-[url('https://i.pinimg.com/736x/6c/3a/e3/6c3ae3d7e20d902e7311ee80e9cd30ae.jpg')]
                 bg-cover bg-center">
